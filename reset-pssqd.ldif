@@ -1,0 +1,4 @@
+dn: cn=Cuenta de Servicio Consultas LDAP OP,ou=Cuentas de servicio,dc=test,dc=testing,dc=com
+changetype: modify
+replace: userPassword
+userPassword: test123

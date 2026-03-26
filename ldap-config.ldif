@@ -1,0 +1,65 @@
+
+
+dn: ou=User Accounts,dc=test,dc=testing,dc=com
+objectClass: organizationalUnit
+ou: User Accounts
+
+dn: ou=Enabled Users,ou=User Accounts,dc=test,dc=testing,dc=com
+objectClass: organizationalUnit
+ou: Enabled Users
+
+dn: ou=Groups,dc=test,dc=testing,dc=com
+objectClass: organizationalUnit
+ou: Groups
+
+dn: ou=Security Groups,ou=Groups,dc=test,dc=testing,dc=com
+objectClass: organizationalUnit
+ou: Security Groups
+
+dn: ou=Cuentas de servicio,dc=test,dc=testing,dc=com
+objectClass: organizationalUnit
+ou: Cuentas de servicio
+
+# Service Account
+dn: cn=Cuenta de Servicio Consultas LDAP OP,ou=Cuentas de servicio,dc=test,dc=testing,dc=com
+objectClass: inetOrgPerson
+cn: Cuenta de Servicio Consultas LDAP OP
+sn: LDAP OP
+userPassword: test
+
+# Users
+dn: cn=Julio Montero,ou=Enabled Users,ou=User Accounts,dc=test,dc=testing,dc=com
+objectClass: inetOrgPerson
+cn: Julio Montero
+sn: Montero
+givenName: Julio
+userPassword: test
+
+dn: cn=Luis Octavio,ou=Enabled Users,ou=User Accounts,dc=test,dc=testing,dc=com
+objectClass: inetOrgPerson
+cn: Luis Octavio
+sn: Octavio
+givenName: Luis Octavio
+userPassword: test
+
+dn: cn=Hairo Antonio ,ou=Enabled Users,ou=User Accounts,dc=test,dc=testing,dc=com
+objectClass: inetOrgPerson
+cn: Hairo Antonio
+sn: Antonio
+givenName: Hairo Antonio
+userPassword: test
+
+# Parent Group
+dn: cn=OCP4_OPENSHIFT_TEST,ou=Security Groups,ou=Groups,dc=test,dc=testing,dc=com
+objectClass: groupOfNames
+cn: OCP4_OPENSHIFT_TEST
+member: cn=OCP4_Prueba,ou=Security Groups,ou=Groups,dc=test,dc=testing,dc=com
+member: cn=Julio Montero,ou=Enabled Users,ou=User Accounts,dc=test,dc=testing,dc=com
+member: cn=Luis Octavio,ou=Enabled Users,ou=User Accounts,dc=test,dc=testing,dc=com
+member: cn=Hairo Antonio,ou=Enabled Users,ou=User Accounts,dc=test,dc=testing,dc=com
+
+# Subgroup
+dn: cn=OCP4_Prueba,ou=Security Groups,ou=Groups,dc=test,dc=testing,dc=com
+objectClass: groupOfNames
+cn: OCP4_Prueba
+member: cn=Julio Montero,ou=Enabled Users,ou=User Accounts,dc=test,dc=testing,dc=com

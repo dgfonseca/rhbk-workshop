@@ -154,6 +154,10 @@ Explanation:
 
 Once the database is running, build and run the **Red Hat Build of Keycloak** container using the provided `Containerfile-psql`.
 
+#### Zip distribution prerequisite (`rhbk-zip.Containerfile`)
+
+If you use `rhbk-zip.Containerfile` instead of `Containerfile-psql`, you must download the **zip distribution** of Red Hat Build of Keycloak from the [Customer Portal — RHBK distributions (version 3.1.0)](https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=rhbk&version=3.1.0&productChanged=yes). Access requires a Red Hat login and appropriate entitlements. After downloading, extract the archive and place the unpacked directory next to the Containerfile using the name expected by `COPY` in `rhbk-zip.Containerfile` (for example `rhbk-26.4.10/`). Then run `podman build -f rhbk-zip.Containerfile .` from this directory.
+
 #### a. Build the Image
 
 ```bash
